@@ -80,6 +80,12 @@ public class mainJavaSwing extends javax.swing.JFrame {
         userProfileLabel.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         userProfileLabel.setText("User Profile");
 
+        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTextFieldActionPerformed(evt);
+            }
+        });
+
         submitButton.setBackground(new java.awt.Color(204, 204, 204));
         submitButton.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         submitButton.setText("Submit");
@@ -271,6 +277,10 @@ public class mainJavaSwing extends javax.swing.JFrame {
              }
             
     }//GEN-LAST:event_uploadButtonActionPerformed
+
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
    }
       
     /**
