@@ -16,11 +16,14 @@ import javax.swing.JOptionPane;
 import model.User;
 
 
+
 /**
  *
  * @author arkpatel
  */
 public class mainJavaSwing extends javax.swing.JFrame {
+
+        private ImageIcon picture;
 
     /**
      * Creates new form mainJavaSwing
@@ -250,7 +253,7 @@ public class mainJavaSwing extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Please enter all the fields!!","OOPS!!", HEIGHT);
             } else{
                 
-                JOptionPane.showMessageDialog(rootPane,user ,"Success!", HEIGHT,this.uploadButton.getIcon());
+                JOptionPane.showMessageDialog(rootPane,user ,"Success!", HEIGHT,this.picture);
             }
                 
             }catch (NullPointerException ne){
@@ -263,18 +266,18 @@ public class mainJavaSwing extends javax.swing.JFrame {
     private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
         // TODO add your handling code here:
          JFileChooser file = new JFileChooser();
-            if (file.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+        if (file.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             try {
-            BufferedImage img = ImageIO.read(file.getSelectedFile());
-            Image edited_image = img.getScaledInstance(60, 80,
-            Image.SCALE_SMOOTH);
-            if (edited_image != null) {
-            this.uploadButton.setIcon(new ImageIcon(edited_image));
+                BufferedImage img = ImageIO.read(file.getSelectedFile());
+                Image edited_image = img.getScaledInstance(60, 80,Image.SCALE_SMOOTH);
+                if (edited_image != null) {
+                     this.picture = new ImageIcon(edited_image);
+                    imgLabel.setIcon(picture);
                 }
-             } catch (IOException ex) {
-                             JOptionPane.showMessageDialog(rootPane,"Upload Image Correctly!!!","OOPS!",HEIGHT);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this,"Upload Image Correctly!!!","OOPS!",HEIGHT);
 
-             }
+            }
             
     }//GEN-LAST:event_uploadButtonActionPerformed
 
